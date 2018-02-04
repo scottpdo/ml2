@@ -80,6 +80,8 @@ class App extends Component<Props, State> {
     const target: HTMLElement = e.target;
     const row = +target.getAttribute('data-row');
     const col = +target.getAttribute('data-col');
+
+    if (this.t.board.data[row * 3 + col] !== '-') return;
     
     this.t.board.play([row, col], this.state.player);
 
